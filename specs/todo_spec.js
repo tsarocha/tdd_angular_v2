@@ -22,37 +22,35 @@ describe('To do Controller', function() {
 	*/
 
 	it('should have 3 default to do list', function() {
-		expect($scope.getToDoList().length).toEqual(3);
-		expect($scope.getToDoList()[0]).toEqual({title:"learn angular", checked:true});
-		expect($scope.getToDoList()[1]).toEqual({title:"learn TDD", checked:true});
-		expect($scope.getToDoList()[2]).toEqual({title:"go home", checked:false});
+		expect($scope.toDoList.length).toEqual(3);
 	});
 
+	it('first item should has learn angular for description and it is done', function() {
+		expect($scope.toDoList[0]).toEqual({title:"learn angular", isDone:true});	
+	});
+
+	it('second item should has learn TDD for description and it is done', function() {
+		expect($scope.toDoList[1]).toEqual({title:"learn TDD", isDone:true});
+	});
+
+	it('first item should has go home for description and it is not done', function() {
+		expect($scope.toDoList[2]).toEqual({title:"go home", isDone:false});
+	});
+
+
 	it('should add new item when call add function', function() {
-		var oldLength = $scope.getToDoList().length;
-		$scope.newTitle = "eat";
-		$scope.addToDo();
-		expect($scope.getToDoList()[oldLength]).toEqual({title:"eat", checked:false});
+		expect($scope.toDoList.length).toEqual(3);
+		$scope.addToDo("eat");
+		expect($scope.toDoList.length).toEqual(4);
+		expect($scope.toDoList[3]).toEqual({title:"eat", isDone:false});
 	});
 
 	it('should clear new to do when click add button', function() {
 		$scope.newTitle = "abc";
 		expect($scope.newTitle).toEqual('abc');
 
-		$scope.addToDo();
+		$scope.addToDo("abc");
 		expect($scope.newTitle).toEqual('');		
 	});
-
-	// it('should change checked status when click check box', function() {
-	// 	var length = $scope.getToDoList().length;
-		
-	// 	var lastToDo = $scope.getToDoList()[length - 1];
-	// 	expect(lastToDo.checked).toEqual(false);
-
-	// 	$scope.toggleStatus(length - 1);
-
-	// 	lastToDo = $scope.getToDoList()[length - 1];
-	// 	expect(lastToDo.checked).toEqual(true);
-	// });
 });
 

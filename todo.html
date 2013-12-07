@@ -2,12 +2,12 @@
 	<body ng-app>
 		<div ng-controller="ToDoController">
 			<input ng-model="newTitle" type="text">
-			<button ng-click="addToDo()">Add</button>
+			<button ng-click="addToDo(newTitle)">Add</button>
 
-			<br><br> We have {{getToDoList().length}} tasks. They are:
+			<br><br> We have {{toDoList.length}} tasks. They are:
 			<ol class="tast-list" ng-model="toDoList">
-				<li class="task-item" ng-repeat="toDo in getToDoList()">
-					<input type="checkbox" ng-model="toDo.checked" > {{ toDo.title }} : {{ toDo.checked }} </input>
+				<li class="task-item" ng-repeat="toDo in toDoList">
+					<input type="checkbox" ng-model="toDo.isDone" > {{ toDo.title }} : {{ toDo.isDone }} </input>
 				</li>
 			</ol>
 		</div>

@@ -1,14 +1,11 @@
 function ToDoController($scope) {
-	$scope.toDoList = [ {title:"learn angular", checked:true},
-						{title:"learn TDD", checked:true},
-						{title:"go home", checked:false} ];
+	$scope.toDoList = [ {title:"learn angular", isDone:true},
+						{title:"learn TDD", isDone:true},
+						{title:"go home", isDone:false} ];
 
-	$scope.getToDoList = function() {
-		return $scope.toDoList;
-	}
 
-	$scope.addToDo = function() {
-		var newToDo = {title:$scope.newTitle, checked:false};
+	$scope.addToDo = function(title) {
+		var newToDo = {title:title, isDone:false};
 		$scope.toDoList.push(newToDo);
 		$scope.newTitle = "";
 	}
