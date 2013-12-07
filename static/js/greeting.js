@@ -9,4 +9,8 @@ function GreetingController($scope) {
 	$scope.setName = function(name) {
 		$scope.name = name;
 	}
+
+	$scope.clearName = function() {
+		$scope.name = '';	
+	}
 };

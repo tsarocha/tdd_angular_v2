@@ -21,15 +21,25 @@ describe('Greeting Controller', function() {
 		*/
 	}));
 
+	/*
 	// it = 1 test case
     it('should have name as tua by default', function() {
     	// ค่า default
-        expect($scope.getName()).toEqual('tua'); 
+        expect($scope.getName()).toEqual('tua');
     });
 
     it('should return Sarocha when name is Sarocha', function(){
     	$scope.name = 'Sarocha';
     	expect($scope.getName()).toEqual('Sarocha');
     });
+
+    it('should clear name when click clear button', function() {
+    	$scope.name = 'Sarocha';
+    	expect($scope.getName()).toEqual('Sarocha');
+
+    	$scope.clearName();
+    	expect($scope.getName()).toEqual('');
+    });
+	*/
 });
 
