@@ -1,0 +1,17 @@
+<html>
+	<body ng-app>
+		<div ng-controller="ToDoController">
+			<input ng-model="newTitle" type="text">
+			<button ng-click="addToDo()">Add</button>
+
+			<br><br> We have {{getToDoList().length}} tasks. They are:
+			<ol class="tast-list" ng-model="toDoList">
+				<li class="task-item" ng-repeat="toDo in getToDoList()">
+					<input type="checkbox" ng-model="toDo.checked" > {{ toDo.title }} : {{ toDo.checked }} </input>
+				</li>
+			</ol>
+		</div>
+		<script src="static/js/lib/angular.min.js"></script>
+		<script src="static/js/todo.js"></script>
+	</body>
+</html>
