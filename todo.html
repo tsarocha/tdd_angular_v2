@@ -1,6 +1,6 @@
 <html>
 	<body ng-app="todoApp">
-		<div ng-controller="ToDoController" ng-init="load()">
+		<div ng-controller="ToDoController" ng-init="init()">
 			<input ng-model="newTitle" type="text">
 			<button ng-click="addToDo(newTitle)">Add</button>
 
@@ -12,6 +12,7 @@
 			</ol>
 		</div>
 		<script src="static/js/lib/angular.min.js"></script>
+		<script src="static/js/lib/angular-resource.min.js"></script>
 		<script src="static/js/todo.js"></script>
 	</body>
 </html>
