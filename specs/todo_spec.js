@@ -6,20 +6,16 @@ describe('To do Controller', function() {
 		// ประกาศตัวแปรบนสุด เพื่อป้องกันปัญหา single var pattern
 		var configuration;
 		$scope = $rootScope.$new();
-		configuration = { $scope: $scope};
+		configuration = { $scope: $scope, TodoService: null};
 
 		$controller('ToDoController', configuration);
+
+		// initialize test
+		$scope.toDoList = [ {title:"learn angular", isDone:true},
+							{title:"learn TDD", isDone:true},
+							{title:"go home", isDone:false} ];
+	
 	}));
-
-	/*
-    it('should clear name when click clear button', function() {
-    	$scope.name = 'Sarocha';
-    	expect($scope.getName()).toEqual('Sarocha');
-
-    	$scope.clearName();
-    	expect($scope.getName()).toEqual('');
-    });
-	*/
 
 	it('should have 3 default to do list', function() {
 		expect($scope.toDoList.length).toEqual(3);
